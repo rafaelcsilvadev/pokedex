@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/core/theme/inner_shadow/inner_shadow.dart';
+import 'package:pokedex/core/theme/typography/app_typography.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +59,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -84,7 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: AppTypography.bold(color: Colors.black, fontSize: 1.5),
+        ),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -105,6 +112,18 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Container(
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  border: Border.fromBorderSide(
+                    BorderSide(color: Colors.black12),
+                  ),
+                  shape: BoxShape.circle,
+                  boxShadow: InnerShadow.thin),
+              child: Icon(Icons.pause, size: 70, color: Colors.black54),
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
