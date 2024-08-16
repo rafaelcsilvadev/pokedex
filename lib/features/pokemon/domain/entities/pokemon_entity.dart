@@ -10,27 +10,27 @@ class PokemonEntity {
   double height;
   List<String> moves;
   String description;
-  double hp;
-  double atk;
-  double def;
-  double stack;
-  double sdef;
-  double spd;
+  double healthPoints;
+  double attack;
+  double defense;
+  double specialAttack;
+  double specialDefense;
+  double speed;
 
   PokemonEntity({
     required this.id,
-    required this.atk,
+    required this.attack,
     this.color,
-    required this.def,
+    required this.defense,
     required this.description,
     required this.height,
-    required this.hp,
+    required this.healthPoints,
     required this.image,
     required this.moves,
     required this.name,
-    required this.sdef,
-    required this.spd,
-    required this.stack,
+    required this.specialDefense,
+    required this.speed,
+    required this.specialAttack,
     required this.type,
     required this.weight,
   });
