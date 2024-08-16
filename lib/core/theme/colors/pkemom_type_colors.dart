@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 enum PokemonTypeColors {
   bug,
@@ -41,3 +42,32 @@ enum PokemonTypeColors {
         PokemonTypeColors.water => const Color(0xFF6493EB),
       };
 }
+
+class PokemonTypeColorsMethods {
+  PokemonTypeColors? getColorByString({required String string}) {
+    final color = switch (string) {
+      'bug' => PokemonTypeColors.bug,
+      'dark' => PokemonTypeColors.dark,
+      'dragon' => PokemonTypeColors.dragon,
+      'electric' => PokemonTypeColors.electric,
+      'fairy' => PokemonTypeColors.fairy,
+      'flighting' => PokemonTypeColors.flighting,
+      'fire' => PokemonTypeColors.fire,
+      'flying' => PokemonTypeColors.flying,
+      'ghost' => PokemonTypeColors.ghost,
+      'normal' => PokemonTypeColors.normal,
+      'grass' => PokemonTypeColors.grass,
+      'ground' => PokemonTypeColors.ground,
+      'ice' => PokemonTypeColors.ice,
+      'poison' => PokemonTypeColors.poison,
+      'psychic' => PokemonTypeColors.psychic,
+      'rock' => PokemonTypeColors.rock,
+      'steel' => PokemonTypeColors.steel,
+      'water' => PokemonTypeColors.water,
+      _ => null,
+    };
+
+    return color;
+  }
+}
+
