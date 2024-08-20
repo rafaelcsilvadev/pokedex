@@ -5,7 +5,7 @@ class PokemonEntity {
   String name;
   PokemonTypeColors? color;
   Uri image;
-  String type;
+  List<String> type;
   double weight;
   double height;
   List<String> moves;
@@ -38,6 +38,6 @@ class PokemonEntity {
   selectColorByType() {
     PokemonTypeColorsMethods pokemonTypeColors = PokemonTypeColorsMethods();
 
-    color = pokemonTypeColors.getColorByString(string: type);
+    color = pokemonTypeColors.getColorByString(string: type[0]);
   }
 }

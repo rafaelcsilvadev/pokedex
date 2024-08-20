@@ -6,7 +6,7 @@ class PokemonUseCase {
 
   final PokemonRepository _pokemonRepository;
 
-  PokemonEntity getSpecificPokemon({required String idOrName}) {
-    return _pokemonRepository.getSpecificPokemon(idOrName: idOrName);
+  Future<PokemonEntity?> getSpecificPokemon({required String idOrName}) async {
+    return await _pokemonRepository.getSpecificPokemon(idOrName: idOrName);
   }
 }
