@@ -4,7 +4,7 @@ import 'package:pokedex/features/pokemon/domain/entities/pokemon_entity.dart';
 
 void main() {
     PokemonEntity pokemonEntity = PokemonEntity(
-    type: ['bug'],
+    type: ['bug', 'poison'],
     attack: 0,
     defense: 0,
     description: '',
