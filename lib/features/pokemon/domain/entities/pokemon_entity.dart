@@ -1,7 +1,7 @@
 import 'package:pokedex/core/theme/colors/pkemom_type_colors.dart';
 
 class PokemonEntity {
-  String id;
+  int id;
   String name;
   PokemonTypeColors? color;
   Uri image;
@@ -10,12 +10,12 @@ class PokemonEntity {
   double height;
   List<String> moves;
   String description;
-  double healthPoints;
-  double attack;
-  double defense;
-  double specialAttack;
-  double specialDefense;
-  double speed;
+  int healthPoints;
+  int attack;
+  int defense;
+  int specialAttack;
+  int specialDefense;
+  int speed;
 
   PokemonEntity({
     required this.id,

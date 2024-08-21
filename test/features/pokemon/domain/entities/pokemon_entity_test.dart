@@ -10,7 +10,7 @@ void main() {
     description: '',
     height: 0,
     healthPoints: 0,
-    id: '',
+    id: 0,
     image: Uri.parse(''),
     moves: ['', ''],
     name: '',

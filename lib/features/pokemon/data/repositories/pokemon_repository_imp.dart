@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fpdart/fpdart.dart';
 import 'package:pokedex/features/pokemon/data/data_sources/pokemon_data_source.dart';
 import 'package:pokedex/features/pokemon/data/dtos/info_pokemon_dto.dart';
@@ -11,7 +13,7 @@ class PokemonRepositoryImp implements PokemonRepository {
 
   PokemonRepositoryImp(this._pokemonDataSource);
 
-  Future<Either<Exception, InfoPokemonDto>> _getInfoPokemon({
+  Future<Either<Exception, InfoPokemonDto>> getInfoPokemon({
     required String idOrName,
   }) async {
     try {
@@ -24,8 +26,8 @@ class PokemonRepositoryImp implements PokemonRepository {
     }
   }
 
-  Future<Either<Exception, SpeciesPokemonDto>> _getSpeciesPokemon({
-    required String idPokemon,
+  Future<Either<Exception, SpeciesPokemonDto>> getSpeciesPokemon({
+    required int idPokemon,
   }) async {
     try {
       var response =
@@ -38,16 +40,17 @@ class PokemonRepositoryImp implements PokemonRepository {
   }
 
   @override
-  Future<PokemonEntity?> getSpecificPokemon({required String idOrName}) async {
+  Future<Either<Exception, PokemonEntity>> getSpecificPokemon(
+      {required String idOrName}) async {
     SpeciesPokemonDto? speciesPokemon;
     InfoPokemonDto? infoPokemon;
 
     Either<Exception, InfoPokemonDto> infoPokemonResponse =
-        await _getInfoPokemon(idOrName: idOrName);
+        await getInfoPokemon(idOrName: idOrName);
 
     infoPokemonResponse.fold((l) => throw Exception(), (r) async {
       Either<Exception, SpeciesPokemonDto> speciesPokemonResponse =
-          await _getSpeciesPokemon(idPokemon: r.id);
+          await getSpeciesPokemon(idPokemon: r.id);
       infoPokemon = r;
       speciesPokemonResponse.fold((l) => throw Exception(), (r) {
         speciesPokemon = r;
@@ -55,10 +58,12 @@ class PokemonRepositoryImp implements PokemonRepository {
     });
 
     if (infoPokemon != null && speciesPokemon != null) {
-      return PokemonDto.fromMap(
-          infoPokemon: infoPokemon!, speciesPokemon: speciesPokemon!);
+      return right(
+        PokemonDto.fromMap(
+            infoPokemon: infoPokemon!, speciesPokemon: speciesPokemon!),
+      );
     } else {
-      return null;
+      return left(throw Exception());
     }
   }
 }

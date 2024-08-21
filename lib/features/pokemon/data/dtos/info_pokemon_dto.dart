@@ -1,17 +1,17 @@
 class InfoPokemonDto {
-  String id;
+  int id;
   String name;
   Uri image;
   List<String> type;
   double weight;
   double height;
   List<String> moves;
-  double healthPoints;
-  double attack;
-  double defense;
-  double specialAttack;
-  double specialDefense;
-  double speed;
+  int healthPoints;
+  int attack;
+  int defense;
+  int specialAttack;
+  int specialDefense;
+  int speed;
 
   InfoPokemonDto({
     required this.id,
@@ -31,21 +31,26 @@ class InfoPokemonDto {
 
   factory InfoPokemonDto.fromMap(Map<String, dynamic> item) => InfoPokemonDto(
         id: item['id'],
-        height: item['height'],
-        weight: item['weight'],
-        type: item['types'].map((item) => TypeDto.fromMap(item)).toList(),
+        height: item['height'] * 0.01,
+        weight: item['weight'] * 0.1,
+        type: (item['types'] as List<dynamic>)
+            .map(
+              (item) => TypeDto.fromMap(item).name,
+            )
+            .toList(),
         healthPoints: item['stats'][0]['base_stat'],
         attack: item['stats'][1]['base_stat'],
         defense: item['stats'][2]['base_stat'],
         specialAttack: item['stats'][3]['base_stat'],
         specialDefense: item['stats'][4]['base_stat'],
         speed: item['stats'][5]['base_stat'],
-        name: item['form'][0]['name'],
-        image: item['sprites']['other']['home']['front_default'],
-        moves: [
-          item['moves'][0]['move']['name'],
-          item['moves'][1]['move']['name'],
-        ],
+        name: item['forms'][0]['name'],
+        image: Uri.parse(item['sprites']['other']['home']['front_default']),
+        moves: (item['moves'] as List<dynamic>)
+            .map(
+              (item) => item['move']['name'].toString(),
+            )
+            .toList(),
       );
 
   Map<String, dynamic> toMap() => {
@@ -71,7 +76,7 @@ class TypeDto {
 
   factory TypeDto.fromMap(Map<String, dynamic> item) {
     return TypeDto(
-      name: item['name'],
+      name: item['type']['name'].toString(),
     );
   }
 
