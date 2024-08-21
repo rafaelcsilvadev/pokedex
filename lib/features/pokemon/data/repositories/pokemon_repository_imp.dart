@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fpdart/fpdart.dart';
 import 'package:pokedex/features/pokemon/data/data_sources/pokemon_data_source.dart';
 import 'package:pokedex/features/pokemon/data/dtos/info_pokemon_dto.dart';

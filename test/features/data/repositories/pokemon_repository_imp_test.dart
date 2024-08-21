@@ -3,23 +3,24 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:pokedex/features/pokemon/data/data_sources/pokemon_data_source.dart';
+import 'package:pokedex/features/pokemon/data/dtos/info_pokemon_dto.dart';
+import 'package:pokedex/features/pokemon/data/dtos/species_pokemon_dto.dart';
 import 'package:pokedex/features/pokemon/data/repositories/pokemon_repository_imp.dart';
-
 import 'mocks/info_pokemon_response_mock.dart';
 import 'mocks/species_pokemon_response_mock.dart';
 
 class PokemonMock extends Mock implements Dio {}
 
 void main() {
-  PokemonMock _pokemonMock = PokemonMock();
-  PokemonDataSource _pokemonDataSource = PokemonDataSource(_pokemonMock);
-  PokemonRepositoryImp _pokemonRepositoryImp =
-      PokemonRepositoryImp(_pokemonDataSource);
+  PokemonMock pokemonMock = PokemonMock();
+  PokemonDataSource pokemonDataSource = PokemonDataSource(pokemonMock);
+  PokemonRepositoryImp pokemonRepositoryImp =
+      PokemonRepositoryImp(pokemonDataSource);
 
   test('Test result mapped getInfoPokemon', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
     when(
-      () => _pokemonMock.get(
+      () => pokemonMock.get(
         any(),
       ),
     ).thenAnswer(
@@ -30,21 +31,21 @@ void main() {
       ),
     );
 
-    final userData = await _pokemonRepositoryImp.getInfoPokemon(idOrName: '1');
-    var data;
+    final userData = await pokemonRepositoryImp.getInfoPokemon(idOrName: '1');
+    InfoPokemonDto? data;
 
     userData.fold(
       (l) => {},
       (r) => data = r,
     );
 
-    expect(data.id, 1);
+    expect(data?.id, 1);
   });
 
   test('Test result mapped getSpeciesPokemon', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
     when(
-      () => _pokemonMock.get(
+      () => pokemonMock.get(
         any(),
       ),
     ).thenAnswer(
@@ -56,16 +57,16 @@ void main() {
     );
 
     final userData =
-        await _pokemonRepositoryImp.getSpecificPokemon(idOrName: '1');
-    var data;
+        await pokemonRepositoryImp.getSpeciesPokemon(idPokemon: 1);
+    SpeciesPokemonDto? data;
     var expected =
-        "A strange seed was\nplanted on its\nback at birth.\fThe plant sprouts\nand grows with\nthis POKéMON.";
+        "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.";
 
     userData.fold(
       (l) => {},
       (r) => data = r,
     );
 
-    expect(data, isNotNull);
+    expect(data?.description, expected);
   });
 }
