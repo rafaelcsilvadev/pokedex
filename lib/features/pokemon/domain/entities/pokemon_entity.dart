@@ -35,9 +35,7 @@ class PokemonEntity {
     required this.weight,
   });
 
-  selectColorByType() {
-    PokemonTypeColorsMethods pokemonTypeColors = PokemonTypeColorsMethods();
-
-    color = pokemonTypeColors.getColorByString(string: type[0]);
+  selectColorByFirstType() {
+    color = PokemonTypeColors.values.firstWhere((item) => item.type == type[0]);
   }
 }

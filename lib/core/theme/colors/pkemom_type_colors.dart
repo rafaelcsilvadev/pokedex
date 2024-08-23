@@ -2,24 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 enum PokemonTypeColors {
-  bug,
-  dark,
-  dragon,
-  electric,
-  fairy,
-  flighting,
-  fire,
-  flying,
-  ghost,
-  normal,
-  grass,
-  ground,
-  ice,
-  poison,
-  psychic,
-  rock,
-  steel,
-  water;
+  bug(type: 'bug'),
+  dark(type: 'dark'),
+  dragon(type: 'dragon'),
+  electric(type: 'electric'),
+  fairy(type: 'fairy'),
+  flighting(type: 'bug'),
+  fire(type: 'fire'),
+  flying(type: 'flying'),
+  ghost(type: 'ghost'),
+  normal(type: 'normal'),
+  grass(type: 'grass'),
+  ground(type: 'ground'),
+  ice(type: 'ice'),
+  poison(type: 'poison'),
+  psychic(type: 'psychic'),
+  rock(type: 'rock'),
+  steel(type: 'steel'),
+  water(type: 'water');
+
+  final String type;
+
+  const PokemonTypeColors({required this.type});
 
   Color get identity => switch (this) {
         PokemonTypeColors.bug => const Color(0xFFA7B723),
@@ -42,32 +46,3 @@ enum PokemonTypeColors {
         PokemonTypeColors.water => const Color(0xFF6493EB),
       };
 }
-
-class PokemonTypeColorsMethods {
-  PokemonTypeColors? getColorByString({required String string}) {
-    final color = switch (string) {
-      'bug' => PokemonTypeColors.bug,
-      'dark' => PokemonTypeColors.dark,
-      'dragon' => PokemonTypeColors.dragon,
-      'electric' => PokemonTypeColors.electric,
-      'fairy' => PokemonTypeColors.fairy,
-      'flighting' => PokemonTypeColors.flighting,
-      'fire' => PokemonTypeColors.fire,
-      'flying' => PokemonTypeColors.flying,
-      'ghost' => PokemonTypeColors.ghost,
-      'normal' => PokemonTypeColors.normal,
-      'grass' => PokemonTypeColors.grass,
-      'ground' => PokemonTypeColors.ground,
-      'ice' => PokemonTypeColors.ice,
-      'poison' => PokemonTypeColors.poison,
-      'psychic' => PokemonTypeColors.psychic,
-      'rock' => PokemonTypeColors.rock,
-      'steel' => PokemonTypeColors.steel,
-      'water' => PokemonTypeColors.water,
-      _ => null,
-    };
-
-    return color;
-  }
-}
-
