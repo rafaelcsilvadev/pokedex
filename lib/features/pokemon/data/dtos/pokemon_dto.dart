@@ -18,28 +18,31 @@ class PokemonDto extends PokemonEntity {
     required super.specialAttack,
     required super.type,
     required super.weight,
-  });
+  }){
+    super.selectColorByFirstType();
+  }
 
   factory PokemonDto.fromMap({
     required InfoPokemonDto infoPokemon,
     required SpeciesPokemonDto speciesPokemon,
-  }) =>
-      PokemonDto(
-        id: infoPokemon.id,
-        height: infoPokemon.height,
-        weight: infoPokemon.weight,
-        type: infoPokemon.type,
-        healthPoints: infoPokemon.healthPoints,
-        attack: infoPokemon.attack,
-        defense: infoPokemon.defense,
-        specialAttack: infoPokemon.specialAttack,
-        specialDefense: infoPokemon.specialDefense,
-        speed: infoPokemon.speed,
-        name: infoPokemon.name,
-        image: infoPokemon.image,
-        moves: infoPokemon.moves,
-        description: speciesPokemon.description,
-      );
+  }) {
+    return PokemonDto(
+      id: infoPokemon.id,
+      height: infoPokemon.height,
+      weight: infoPokemon.weight,
+      type: infoPokemon.type,
+      healthPoints: infoPokemon.healthPoints,
+      attack: infoPokemon.attack,
+      defense: infoPokemon.defense,
+      specialAttack: infoPokemon.specialAttack,
+      specialDefense: infoPokemon.specialDefense,
+      speed: infoPokemon.speed,
+      name: infoPokemon.name,
+      image: infoPokemon.image,
+      moves: infoPokemon.moves,
+      description: speciesPokemon.description,
+    );
+  }
 
   toMap({
     required InfoPokemonDto infoPokemon,
