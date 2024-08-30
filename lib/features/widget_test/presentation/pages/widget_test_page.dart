@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/core/components/app_text.dart';
 
 class WidgetTestPage extends StatefulWidget {
   const WidgetTestPage({super.key});
@@ -10,6 +11,10 @@ class WidgetTestPage extends StatefulWidget {
 class _WidgetTestPageState extends State<WidgetTestPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: SafeArea(
+        child: AppText(),
+      ),
+    );
   }
 }

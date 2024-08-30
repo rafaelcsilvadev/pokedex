@@ -1,3 +1,3 @@
-abstract class WidgetTestRoutes {
+abstract class RoutesModule {
   static const widgetTest = '/';
 }

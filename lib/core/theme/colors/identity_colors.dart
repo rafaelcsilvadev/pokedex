@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 enum IdentityColors {
-  primary;
+  primary(color: Color(0xFFDC0A2D));
 
-  Color get identity => switch (this) {
-        IdentityColors.primary => const Color(0xFFDC0A2D),
-      };
+  final Color color;
+
+  const IdentityColors({required this.color});
+
+  Color get primaryColor => IdentityColors.primary.color;
 }
