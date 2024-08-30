@@ -1,15 +1,7 @@
-import 'package:pokedex/core/components/text_header/text_header_component.dart';
+import 'package:pokedex/core/components/text_body/text_body_component.dart';
 
-class TextHeader extends TextHeaderComponent {
-  const TextHeader.headline({
-    super.key,
-    required super.color,
-    required super.text,
-  }) : super(
-          fontSize: 32,
-        );
-
-  const TextHeader.subtile1({
+class TextBody extends TextBodyComponent {
+  const TextBody.body1({
     super.key,
     required super.color,
     required super.text,
@@ -17,7 +9,7 @@ class TextHeader extends TextHeaderComponent {
           fontSize: 16,
         );
 
-  const TextHeader.subtile2({
+  const TextBody.body2({
     super.key,
     required super.color,
     required super.text,
@@ -25,11 +17,19 @@ class TextHeader extends TextHeaderComponent {
           fontSize: 14,
         );
 
-  const TextHeader.subtile3({
+  const TextBody.body3({
     super.key,
     required super.color,
     required super.text,
   }) : super(
           fontSize: 12,
+        );
+
+  const TextBody.caption({
+    super.key,
+    required super.color,
+    required super.text,
+  }) : super(
+          fontSize: 8,
         );
 }

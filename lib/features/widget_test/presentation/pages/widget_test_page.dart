@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/core/components/text_header/text_header.dart';
+import 'package:pokedex/core/components/text_body/text_body.dart';
 
 class WidgetTestPage extends StatefulWidget {
   const WidgetTestPage({super.key});
@@ -13,7 +13,7 @@ class _WidgetTestPageState extends State<WidgetTestPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: TextHeader.headline(
+        child: TextBody.body1(
           color: Colors.black,
           text: 'Teste',
         ),

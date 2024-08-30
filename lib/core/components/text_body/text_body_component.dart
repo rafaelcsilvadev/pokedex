@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TextHeaderComponent extends StatelessWidget {
-  const TextHeaderComponent({
+class TextBodyComponent extends StatelessWidget {
+  const TextBodyComponent({
     super.key,
     required this.text,
     required this.color,
@@ -18,7 +18,7 @@ class TextHeaderComponent extends StatelessWidget {
       text,
       style: TextStyle(
         color: color,
-        fontFamily: 'Poppins Bold',
+        fontFamily: 'Poppins Regular',
         fontSize: fontSize,
       ),
     );
