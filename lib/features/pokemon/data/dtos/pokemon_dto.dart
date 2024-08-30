@@ -18,9 +18,7 @@ class PokemonDto extends PokemonEntity {
     required super.specialAttack,
     required super.type,
     required super.weight,
-  }){
-    super.selectColorByFirstType();
-  }
+  });
 
   factory PokemonDto.fromMap({
     required InfoPokemonDto infoPokemon,

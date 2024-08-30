@@ -33,9 +33,11 @@ class PokemonEntity {
     required this.specialAttack,
     required this.type,
     required this.weight,
-  });
+  }) {
+    color = _initColorByType();
+  }
 
-  selectColorByFirstType() {
-    color = PokemonTypeColors.values.firstWhere((item) => item.type == type[0]);
+  _initColorByType() {
+    return PokemonTypeColors.values.firstWhere((item) => item.type == type[0]);
   }
 }

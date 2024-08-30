@@ -21,8 +21,6 @@ void main() {
   );
 
   test('Get colors by type', () {
-    pokemonEntity.selectColorByFirstType();
-
     expect(pokemonEntity.color, PokemonTypeColors.bug);
   });
 }
