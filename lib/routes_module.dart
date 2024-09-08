@@ -1,3 +1,4 @@
 abstract class RoutesModule {
-  static const widgetTest = '/';
+  static const widget_test = '/widgetTest';
+  static const pokemon_list = '/';
 }
