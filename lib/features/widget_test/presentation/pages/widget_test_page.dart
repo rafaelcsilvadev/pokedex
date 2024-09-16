@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/core/components/text_body/text_body.dart';
+import 'package:pokedex/core/components/atomns/text_body/text_body.dart';
 
 class WidgetTestPage extends StatefulWidget {
   const WidgetTestPage({super.key});

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/core/components/text_header/text_header.dart';
+import 'package:pokedex/core/components/atomns/text_header/text_header.dart';
 import 'package:pokedex/core/theme/colors/gray_scale_color.dart';
 import 'package:pokedex/core/theme/colors/pkemom_type_colors.dart';
 
-class PokemonTypeButtonComponent extends ElevatedButton {
+class PokemonTypeButton extends ElevatedButton {
   final PokemonTypeColors pokemonTypeColor;
   final String pokemonType;
 
-  PokemonTypeButtonComponent({
+  PokemonTypeButton({
     super.key,
     required super.onPressed,
     required this.pokemonTypeColor,

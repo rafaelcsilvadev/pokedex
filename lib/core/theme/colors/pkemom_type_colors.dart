@@ -2,100 +2,66 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 enum PokemonTypeColors {
-  bug(
-    type: 'bug',
-    color: Color(0xFFA7B723),
-  ),
-  dark(
-    type: 'dark',
-    color: Color(0xFF75574C),
-  ),
-  dragon(
-    type: 'dragon',
-    color: Color(0xFF7037FF),
-  ),
-  electric(
-    type: 'electric',
-    color: Color(0xFFF9CF30),
-  ),
-  fairy(
-    type: 'fairy',
-    color: Color(0xFFE69EAC),
-  ),
-  flighting(
-    type: 'flighting',
-    color: Color(0xFFC12239),
-  ),
-  fire(
-    type: 'fire',
-    color: Color(0xFFF57D31),
-  ),
-  flying(
-    type: 'flying',
-    color: Color(0xFF70559B),
-  ),
-  ghost(
-    type: 'ghost',
-    color: Color(0xFFAAA67F),
-  ),
-  normal(
-    type: 'normal',
-    color: Color(0xFF74CB48),
-  ),
-  grass(
-    type: 'grass',
-    color: Color(0xFFDEC16B),
-  ),
-  ground(
-    type: 'ground',
-    color: Color(0xFFDC0A2D),
-  ),
-  ice(
-    type: 'ice',
-    color: Color(0xFF9AD6DF),
-  ),
-  poison(
-    type: 'poison',
-    color: Color(0xFFA43E9E),
-  ),
-  psychic(
-    type: 'psychic',
-    color: Color(0xFFFB5584),
-  ),
-  rock(
-    type: 'rock',
-    color: Color(0xFFB69E31),
-  ),
-  steel(
-    type: 'steel',
-    color: Color(0xFFB7B9D0),
-  ),
-  water(
-    type: 'water',
-    color: Color(0xFF6493EB),
-  );
+  bug,
+  dark,
+  dragon,
+  electric,
+  fairy,
+  flighting,
+  fire,
+  flying,
+  ghost,
+  normal,
+  grass,
+  ground,
+  ice,
+  poison,
+  psychic,
+  rock,
+  steel,
+  water;
 
-  final String type;
-  final Color color;
 
-  const PokemonTypeColors({required this.type, required this.color});
 
-  Color get bugColor => PokemonTypeColors.bug.color;
-  Color get darkColor => PokemonTypeColors.dark.color;
-  Color get dragonColor => PokemonTypeColors.dragon.color;
-  Color get electricColor => PokemonTypeColors.electric.color;
-  Color get fairyColor => PokemonTypeColors.fairy.color;
-  Color get flightingColor => PokemonTypeColors.flighting.color;
-  Color get fireColor => PokemonTypeColors.fire.color;
-  Color get flyingColor => PokemonTypeColors.flying.color;
-  Color get ghostColor => PokemonTypeColors.ghost.color;
-  Color get normalColor => PokemonTypeColors.normal.color;
-  Color get grassColor => PokemonTypeColors.grass.color;
-  Color get groundColor => const Color(0xFFDC0A2D);
-  Color get iceColor => PokemonTypeColors.ice.color;
-  Color get poisonColor => PokemonTypeColors.poison.color;
-  Color get psychicColor => PokemonTypeColors.psychic.color;
-  Color get rockColor => PokemonTypeColors.rock.color;
-  Color get steelColor => PokemonTypeColors.steel.color;
-  Color get waterColor => PokemonTypeColors.water.color;      
+  Color get color => switch (this) {
+        PokemonTypeColors.bug => const Color(0xFFA7B723),
+        PokemonTypeColors.dark => const Color(0xFF75574C),
+        PokemonTypeColors.dragon => const Color(0xFF7037FF),
+        PokemonTypeColors.electric => const Color(0xFFF9CF30),
+        PokemonTypeColors.fairy => const Color(0xFFE69EAC),
+        PokemonTypeColors.flighting => const Color(0xFFC12239),
+        PokemonTypeColors.fire => const Color(0xFFF57D31),
+        PokemonTypeColors.flying => const Color(0xFFAAA67F),
+        PokemonTypeColors.ghost => const Color(0xFF70559B),
+        PokemonTypeColors.normal => const Color(0xFFAAA67F),
+        PokemonTypeColors.grass => const Color(0xFF74CB48),
+        PokemonTypeColors.ground => const Color(0xFFDC0A2D),
+        PokemonTypeColors.ice => const Color(0xFF9AD6DF),
+        PokemonTypeColors.poison => const Color(0xFFA43E9E),
+        PokemonTypeColors.psychic => const Color(0xFFFB5584),
+        PokemonTypeColors.rock => const Color(0xFFB69E31),
+        PokemonTypeColors.steel => const Color(0xFFB7B9D0),
+        PokemonTypeColors.water => const Color(0xFF6493EB),
+      };
+
+  String get type => switch (this) {
+        PokemonTypeColors.bug => 'bug',
+        PokemonTypeColors.dark => 'dark',
+        PokemonTypeColors.dragon => 'dragon',
+        PokemonTypeColors.electric => 'electric',
+        PokemonTypeColors.fairy => 'fairy',
+        PokemonTypeColors.flighting => 'flighting',
+        PokemonTypeColors.fire => 'fire',
+        PokemonTypeColors.flying => 'flying',
+        PokemonTypeColors.ghost => 'ghost',
+        PokemonTypeColors.normal => 'normal',
+        PokemonTypeColors.grass => 'grass',
+        PokemonTypeColors.ground => 'ground',
+        PokemonTypeColors.ice => 'ice',
+        PokemonTypeColors.poison => 'poison',
+        PokemonTypeColors.psychic => 'psychic',
+        PokemonTypeColors.rock => 'rock',
+        PokemonTypeColors.steel => 'steel',
+        PokemonTypeColors.water => 'water',
+      };
 }

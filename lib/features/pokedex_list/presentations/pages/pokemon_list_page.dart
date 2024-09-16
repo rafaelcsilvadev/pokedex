@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/core/theme/colors/pkemom_type_colors.dart';
-import 'package:pokedex/features/pokedex_list/presentations/components/pokemon_type_button/pokemon_type_button.dart';
+import 'package:pokedex/features/pokedex_list/presentations/components/atomns/pokemon_type_button.dart';
 
 class PokemonListPage extends StatefulWidget {
   const PokemonListPage({super.key});
@@ -14,10 +14,13 @@ class _PokemonListPageState extends State<PokemonListPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: PokemonTypeButton(
-          onPressed: () {},
-          pokemonTypeColor: PokemonTypeColors.dark,
-          pokemonType: 'Poison',
+        body: SizedBox(
+          width: 25,
+          child: PokemonTypeButton(
+            onPressed: () {},
+            pokemonTypeColor: PokemonTypeColors.dark,
+            pokemonType: 'Poison',
+          ),
         ),
       ),
     );
