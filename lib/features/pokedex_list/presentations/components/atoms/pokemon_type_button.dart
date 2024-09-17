@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/core/components/atomns/text_header/text_header.dart';
+import 'package:pokedex/core/components/atoms/text_header/text_header.dart';
 import 'package:pokedex/core/theme/colors/gray_scale_color.dart';
 import 'package:pokedex/core/theme/colors/pkemom_type_colors.dart';
 

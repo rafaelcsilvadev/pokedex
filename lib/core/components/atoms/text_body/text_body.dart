@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/core/theme/typography/app_typography.dart';
 
 class TextBody extends StatelessWidget {
   const TextBody({
@@ -40,9 +41,8 @@ class TextBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
+      style: AppTypography.regular(
         color: color,
-        fontFamily: 'Poppins Regular',
         fontSize: fontSize,
       ),
     );

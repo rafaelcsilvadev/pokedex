@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/core/theme/colors/pkemom_type_colors.dart';
-import 'package:pokedex/features/pokedex_list/presentations/components/atomns/pokemon_type_button.dart';
+import 'package:pokedex/features/pokedex_list/presentations/components/atoms/search_input.dart';
 
 class PokemonListPage extends StatefulWidget {
   const PokemonListPage({super.key});
@@ -14,12 +13,15 @@ class _PokemonListPageState extends State<PokemonListPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SizedBox(
-          width: 25,
-          child: PokemonTypeButton(
-            onPressed: () {},
-            pokemonTypeColor: PokemonTypeColors.dark,
-            pokemonType: 'Poison',
+        backgroundColor: Colors.black,
+        body: Center(
+          child: SizedBox(
+            height: 40,
+            child: AppInput(
+              onChanged: (value) => {},
+              hintText: 'Search',
+              prefixIcon: Icons.search,
+            ),
           ),
         ),
       ),

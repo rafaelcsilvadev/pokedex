@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/core/theme/typography/app_typography.dart';
 
 class TextHeader extends StatelessWidget {
   const TextHeader({
@@ -40,9 +41,8 @@ class TextHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
+      style: AppTypography.bold(
         color: color,
-        fontFamily: 'Poppins Bold',
         fontSize: fontSize,
       ),
     );
