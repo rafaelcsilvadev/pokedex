@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/features/pokedex_list/presentations/components/atoms/search_input.dart';
+import 'package:pokedex/features/pokedex_list/presentations/components/atoms/app_input.dart';
+import 'package:pokedex/features/pokedex_list/presentations/components/molecules/title_top.dart';
 
 class PokemonListPage extends StatefulWidget {
   const PokemonListPage({super.key});
@@ -15,16 +16,8 @@ class _PokemonListPageState extends State<PokemonListPage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-          child: SizedBox(
-            height: 40,
-            child: AppInput(
-              onChanged: (value) => {},
-              hintText: 'Search',
-              prefixIcon: Icons.search,
-            ),
-          ),
-        ),
-      ),
+          child: TitleTop()),
+      ),      
     );
   }
 }

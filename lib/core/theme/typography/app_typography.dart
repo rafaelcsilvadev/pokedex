@@ -4,9 +4,13 @@ class AppTypography extends TextStyle {
   const AppTypography.bold({
     required super.color,
     required super.fontSize,
-  }) : super(fontFamily: 'Poppins Bold');
+  }) : super(
+          fontFamily: 'PoppinsBold',
+        );
   const AppTypography.regular({
     required super.color,
     required super.fontSize,
-  }) : super(fontFamily: 'Poppins Regular');
+  }) : super(
+          fontFamily: 'PoppinsRegular',
+        );
 }
