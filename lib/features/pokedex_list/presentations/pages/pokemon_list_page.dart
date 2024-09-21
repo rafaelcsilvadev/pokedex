@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/features/pokedex_list/presentations/components/atoms/app_input.dart';
 import 'package:pokedex/features/pokedex_list/presentations/components/molecules/title_top.dart';
 
 class PokemonListPage extends StatefulWidget {
