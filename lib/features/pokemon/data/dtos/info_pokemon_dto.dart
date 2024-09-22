@@ -1,18 +1,4 @@
 class InfoPokemonDto {
-  int id;
-  String name;
-  Uri image;
-  List<String> type;
-  double weight;
-  double height;
-  List<String> moves;
-  int healthPoints;
-  int attack;
-  int defense;
-  int specialAttack;
-  int specialDefense;
-  int speed;
-
   InfoPokemonDto({
     required this.id,
     required this.attack,
@@ -28,6 +14,21 @@ class InfoPokemonDto {
     required this.type,
     required this.weight,
   });
+
+  int id;
+  String name;
+  Uri image;
+  List<String> type;
+  double weight;
+  double height;
+  List<String> moves;
+  int healthPoints;
+  int attack;
+  int defense;
+  int specialAttack;
+  int specialDefense;
+  int speed;
+
 
   factory InfoPokemonDto.fromMap(Map<String, dynamic> item) => InfoPokemonDto(
         id: item['id'],

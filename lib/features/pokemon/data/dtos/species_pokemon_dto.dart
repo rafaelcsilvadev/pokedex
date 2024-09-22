@@ -1,9 +1,9 @@
 class SpeciesPokemonDto {
-  String description;
-
   SpeciesPokemonDto({
     required this.description,
   });
+
+  String description;
 
   factory SpeciesPokemonDto.fromMap(Map<String, dynamic> item) =>
       SpeciesPokemonDto(

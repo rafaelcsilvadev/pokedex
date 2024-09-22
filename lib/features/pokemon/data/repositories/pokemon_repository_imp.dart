@@ -7,9 +7,10 @@ import 'package:pokedex/features/pokemon/domain/entities/pokemon_entity.dart';
 import 'package:pokedex/features/pokemon/domain/repositories/pokemon_repository.dart';
 
 class PokemonRepositoryImp implements PokemonRepository {
+  PokemonRepositoryImp(this._pokemonDataSource);
+
   final PokemonDataSource _pokemonDataSource;
 
-  PokemonRepositoryImp(this._pokemonDataSource);
 
   Future<Either<Exception, InfoPokemonDto>> getInfoPokemon({
     required String idOrName,

@@ -4,10 +4,10 @@ import 'package:dio/dio.dart';
 import 'package:pokedex/core/end_points/end_points.dart';
 
 class PokemonDataSource {
+  PokemonDataSource(this._dio);
+
   final Dio _dio;
   final EndPoints _endPoints = EndPoints();
-
-  PokemonDataSource(this._dio);
 
   Future<Map<String, dynamic>> getInfoPokemon(
       {required String idOrName}) async {

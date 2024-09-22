@@ -2,22 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:pokedex/core/theme/colors/pkemom_type_colors.dart';
 
 class PokemonEntity {
-  int id;
-  String name;
-  Color? color;
-  Uri image;
-  List<String> type;
-  double weight;
-  double height;
-  List<String> moves;
-  String description;
-  int healthPoints;
-  int attack;
-  int defense;
-  int specialAttack;
-  int specialDefense;
-  int speed;
-
   PokemonEntity({
     required this.id,
     required this.attack,
@@ -37,6 +21,23 @@ class PokemonEntity {
   }) {
     color = _initColorByType();
   }
+
+  int id;
+  String name;
+  Color? color;
+  Uri image;
+  List<String> type;
+  double weight;
+  double height;
+  List<String> moves;
+  String description;
+  int healthPoints;
+  int attack;
+  int defense;
+  int specialAttack;
+  int specialDefense;
+  int speed;
+
 
   Color _initColorByType() {
     var element = PokemonTypeColors.values.firstWhere(
