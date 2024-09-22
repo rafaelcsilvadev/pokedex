@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/features/pokedex_list/presentations/components/molecules/title_top.dart';
+import 'package:pokedex/features/pokedex_list/presentations/components/molecules/pokemon_card.dart';
 
 class PokemonListPage extends StatefulWidget {
   const PokemonListPage({super.key});
@@ -15,7 +15,10 @@ class _PokemonListPageState extends State<PokemonListPage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-          child: TitleTop()),
+          child: PokemonCard(
+            pokemonId: 1,
+            pokemonName: 'Pokemon Name',
+          )),
       ),      
     );
   }

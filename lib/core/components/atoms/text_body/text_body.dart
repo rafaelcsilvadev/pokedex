@@ -27,6 +27,12 @@ class TextBody extends StatelessWidget {
     required this.text,
   }) : fontSize = 12;
 
+  const TextBody.body4({
+    super.key,
+    required this.color,
+    required this.text,
+  }) : fontSize = 10;
+
   const TextBody.caption({
     super.key,
     required this.color,
