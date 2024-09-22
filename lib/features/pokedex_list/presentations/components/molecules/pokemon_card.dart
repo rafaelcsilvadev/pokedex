@@ -8,10 +8,12 @@ class PokemonCard extends StatelessWidget {
     super.key,
     required this.pokemonId,
     required this.pokemonName,
+    required this.pokemonImage,
   });
 
   final int pokemonId;
   final String pokemonName;
+  final String pokemonImage;
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +45,8 @@ class PokemonCard extends StatelessWidget {
             width: 72,
             height: 72,
             alignment: Alignment.center,
-            child: Image.asset(
-              AppImages.bulbasaur,
+            child: Image.network(
+              pokemonImage,
             ),
           ),
           Container(
