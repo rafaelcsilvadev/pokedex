@@ -31,9 +31,9 @@ dependencies:
   intl:
   dio:
   flutter_modular:
-  fpdart:
   mocktail:
   flutter_svg:
+  logger: 
   flutter:
     sdk: flutter
   flutter_localizations:

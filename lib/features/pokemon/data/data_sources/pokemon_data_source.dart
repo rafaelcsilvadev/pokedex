@@ -10,7 +10,9 @@ class PokemonDataSource {
   final EndPoints _endPoints = EndPoints();
 
   Future<Map<String, dynamic>> getInfoPokemon(
-      {required String idOrName}) async {
+      {
+    required String idOrName,
+  }) async {
     var response = await _dio.get(_endPoints.pokemonInfo(idOrName: idOrName));
 
     return response.data;

@@ -15,10 +15,8 @@ class _PokemonListPageState extends State<PokemonListPage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-          child: PokemonCard(
-            pokemonId: 1,
-            pokemonName: 'Pokemon Name',
-          )),
+          child: Container(),
+        ),
       ),      
     );
   }

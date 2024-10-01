@@ -1,4 +1,4 @@
-import 'package:fpdart/fpdart.dart';
+import 'package:pokedex/core/exeptions/failure.dart';
 import 'package:pokedex/features/pokemon/data/data_sources/pokemon_data_source.dart';
 import 'package:pokedex/features/pokemon/data/dtos/info_pokemon_dto.dart';
 import 'package:pokedex/features/pokemon/data/dtos/pokemon_dto.dart';
@@ -11,58 +11,74 @@ class PokemonRepositoryImp implements PokemonRepository {
 
   final PokemonDataSource _pokemonDataSource;
 
-
-  Future<Either<Exception, InfoPokemonDto>> getInfoPokemon({
+  Future<InfoPokemonDto?> getInfoPokemon({
     required String idOrName,
   }) async {
     try {
-      var response =
-          await _pokemonDataSource.getInfoPokemon(idOrName: idOrName);
+      Map<String, dynamic> response = await _pokemonDataSource.getInfoPokemon(
+        idOrName: idOrName,
+      );
 
-      return right(InfoPokemonDto.fromMap(response));
+      InfoPokemonDto infoPokemon = InfoPokemonDto.fromMap(response);
+
+      return infoPokemon;
     } on Exception catch (e) {
-      return left(e);
+      Failure.error(
+        name: 'getInfoPokemon',
+        message: e.toString(),
+      );
+
+      return null;
     }
   }
 
-  Future<Either<Exception, SpeciesPokemonDto>> getSpeciesPokemon({
+  Future<SpeciesPokemonDto?> getSpeciesPokemon({
     required int idPokemon,
   }) async {
     try {
-      var response =
-          await _pokemonDataSource.getSpeciesPokemon(idPokemon: idPokemon);
+      Map<String, dynamic> response =
+          await _pokemonDataSource.getSpeciesPokemon(
+        idPokemon: idPokemon,
+      );
 
-      return right(SpeciesPokemonDto.fromMap(response));
-    } on Exception catch (e) {
-      return left(e);
+      SpeciesPokemonDto speciesPokemon = SpeciesPokemonDto.fromMap(response);
+
+      return speciesPokemon;
+    } catch (e) {
+      Failure.error(
+        name: 'getSpeciesPokemon',
+        message: 'Not Found',
+      );
+
+      return null;
     }
   }
 
   @override
-  Future<Either<Exception, PokemonEntity>> getSpecificPokemon(
-      {required String idOrName}) async {
-    SpeciesPokemonDto? speciesPokemon;
-    InfoPokemonDto? infoPokemon;
+  Future<PokemonEntity?> getSpecificPokemon({
+    required String idOrName,
+  }) async {
+    InfoPokemonDto? infoPokemonResponse = await getInfoPokemon(
+      idOrName: idOrName,
+    );
 
-    Either<Exception, InfoPokemonDto> infoPokemonResponse =
-        await getInfoPokemon(idOrName: idOrName);
-
-    infoPokemonResponse.fold((l) => throw Exception(), (r) async {
-      Either<Exception, SpeciesPokemonDto> speciesPokemonResponse =
-          await getSpeciesPokemon(idPokemon: r.id);
-      infoPokemon = r;
-      speciesPokemonResponse.fold((l) => throw Exception(), (r) {
-        speciesPokemon = r;
-      });
-    });
-
-    if (infoPokemon != null && speciesPokemon != null) {
-      return right(
-        PokemonDto.fromMap(
-            infoPokemon: infoPokemon!, speciesPokemon: speciesPokemon!),
-      );
-    } else {
-      return left(throw Exception());
+    if (infoPokemonResponse == null) {
+      return null;
     }
+
+    SpeciesPokemonDto? speciesPokemonResponse = await getSpeciesPokemon(
+      idPokemon: infoPokemonResponse.id,
+    );
+
+    if (speciesPokemonResponse == null) {
+      return null;
+    }
+
+    PokemonDto pokemon = PokemonDto.fromMap(
+      infoPokemon: infoPokemonResponse,
+      speciesPokemon: speciesPokemonResponse,
+    );
+
+    return pokemon;
   }
 }

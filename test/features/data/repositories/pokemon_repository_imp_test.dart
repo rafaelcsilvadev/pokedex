@@ -31,15 +31,10 @@ void main() {
       ),
     );
 
-    final userData = await pokemonRepositoryImp.getInfoPokemon(idOrName: '1');
-    InfoPokemonDto? data;
-
-    userData.fold(
-      (l) => {},
-      (r) => data = r,
-    );
-
-    expect(data?.id, 1);
+    InfoPokemonDto? data =
+        await pokemonRepositoryImp.getInfoPokemon(idOrName: '1');
+    
+    expect(data!.id, 1);
   });
 
   test('Test result mapped getSpeciesPokemon', () async {
@@ -56,17 +51,12 @@ void main() {
       ),
     );
 
-    final userData =
+    SpeciesPokemonDto? data =
         await pokemonRepositoryImp.getSpeciesPokemon(idPokemon: 1);
-    SpeciesPokemonDto? data;
     var expected =
         "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.";
 
-    userData.fold(
-      (l) => {},
-      (r) => data = r,
-    );
 
-    expect(data?.description, expected);
+    expect(data!.description, expected);
   });
 }
