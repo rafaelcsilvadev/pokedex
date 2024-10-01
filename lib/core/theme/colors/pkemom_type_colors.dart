@@ -20,9 +20,7 @@ enum PokemonTypeColors {
   rock,
   steel,
   water;
-
-
-
+  
   Color get color => switch (this) {
         PokemonTypeColors.bug => const Color(0xFFA7B723),
         PokemonTypeColors.dark => const Color(0xFF75574C),

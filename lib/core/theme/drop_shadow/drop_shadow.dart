@@ -9,6 +9,7 @@ class DropShadow extends BoxShadow {
           offset: const Offset(0, 1),
           spreadRadius: 1,
         );
+        
   const DropShadow.hard()
       : super(
           blurRadius: 12,

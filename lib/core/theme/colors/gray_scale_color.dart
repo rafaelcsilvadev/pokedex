@@ -6,9 +6,7 @@ enum GrayScaleColor {
   light,
   background,
   white;
-
   
-
   Color get color => switch (this) {
         GrayScaleColor.dark => const Color(0xFF212121),
         GrayScaleColor.medium => const Color(0xFF666666),
