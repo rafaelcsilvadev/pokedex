@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/features/pokedex_list/presentations/components/molecules/pokemon_card.dart';
 
 class PokemonListPage extends StatefulWidget {
   const PokemonListPage({super.key});
