@@ -3,8 +3,8 @@ import 'package:pokedex/core/theme/colors/gray_scale_color.dart';
 import 'package:pokedex/core/theme/colors/identity_colors.dart';
 import 'package:pokedex/core/theme/typography/app_typography.dart';
 
-class AppInput extends TextFormField {
-  AppInput({
+class AppInputAtom extends TextFormField {
+  AppInputAtom({
     super.key,
     required super.onChanged,
     required this.hintText,

@@ -3,11 +3,11 @@ import 'package:pokedex/core/components/atoms/text_header_atom/text_header_atom.
 import 'package:pokedex/core/theme/colors/gray_scale_color.dart';
 import 'package:pokedex/core/theme/colors/pkemom_type_colors.dart';
 
-class PokemonTypeButton extends ElevatedButton {
+class PokemonTypeButtonAtom extends ElevatedButton {
   final PokemonTypeColors pokemonTypeColor;
   final String pokemonType;
 
-  PokemonTypeButton({
+  PokemonTypeButtonAtom({
     super.key,
     required super.onPressed,
     required this.pokemonTypeColor,

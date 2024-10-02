@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/features/pokedex_list/presentations/components/molecules/search_input_molecule.dart';
 
 class PokemonListPage extends StatefulWidget {
   const PokemonListPage({super.key});
@@ -14,7 +15,9 @@ class _PokemonListPageState extends State<PokemonListPage> {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-          child: Container(),
+          child: SearchInputMolecule(
+            onChanged: (_) {},
+          ),
         ),
       ),      
     );
