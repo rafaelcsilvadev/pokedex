@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/core/components/atoms/text_header/text_header.dart';
+import 'package:pokedex/core/components/atoms/text_header_atom/text_header_atom.dart';
 import 'package:pokedex/core/theme/colors/gray_scale_color.dart';
 import 'package:pokedex/core/theme/colors/pkemom_type_colors.dart';
 
@@ -23,7 +23,7 @@ class PokemonTypeButton extends ElevatedButton {
         );
 }
 
-class PokemonTypeText extends TextHeader {
+class PokemonTypeText extends TextHeaderAtom {
   final String pokemonType;
 
   PokemonTypeText({

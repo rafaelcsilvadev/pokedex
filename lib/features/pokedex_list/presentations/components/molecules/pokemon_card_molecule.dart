@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/core/components/atoms/text_body/text_body.dart';
+import 'package:pokedex/core/components/atoms/text_body_atom/text_body_atom.dart';
 import 'package:pokedex/core/theme/colors/gray_scale_color.dart';
 
-class PokemonCard extends StatelessWidget {
-  const PokemonCard({
+class PokemonCardMolecule extends StatelessWidget {
+  const PokemonCardMolecule({
     super.key,
     required this.pokemonId,
     required this.pokemonName,
@@ -35,7 +35,7 @@ class PokemonCard extends StatelessWidget {
               top: 2,
             ),
             alignment: Alignment.topRight,
-            child: TextBody.caption(
+            child: TextBodyAtom.caption(
               color: GrayScaleColor.medium.color,
               text: pokemonIdFormatted,
             ),
@@ -52,7 +52,7 @@ class PokemonCard extends StatelessWidget {
             width: 88,
             height: 16,
             alignment: Alignment.center,
-            child: TextBody.body4(
+            child: TextBodyAtom.body4(
               color: GrayScaleColor.dark.color,
               text: pokemonName,
             ),

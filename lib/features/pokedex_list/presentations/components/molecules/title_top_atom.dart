@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pokedex/core/assets/app_icons.dart';
-import 'package:pokedex/core/components/atoms/text_header/text_header.dart';
+import 'package:pokedex/core/components/atoms/text_header_atom/text_header_atom.dart';
 import 'package:pokedex/core/theme/colors/gray_scale_color.dart';
 
 class TitleTop extends StatelessWidget {
@@ -17,7 +17,7 @@ class TitleTop extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.only(left: 20),
-          child: TextHeader.headline(
+          child: TextHeaderAtom.headline(
             color: GrayScaleColor.white.color,
             text: 'Pokedéx',
           ),

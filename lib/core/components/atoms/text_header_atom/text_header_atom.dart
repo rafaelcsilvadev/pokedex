@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/core/theme/typography/app_typography.dart';
 
-class TextHeader extends StatelessWidget {
-  const TextHeader({
+class TextHeaderAtom extends StatelessWidget {
+  const TextHeaderAtom({
     super.key,
     required this.text,
     required this.color,
     required this.fontSize,
   });
 
-    const TextHeader.headline({
+    const TextHeaderAtom.headline({
     super.key,
     required this.color,
     required this.text,
   }) : fontSize = 32;
 
-  const TextHeader.subtile1({
+  const TextHeaderAtom.subtile1({
     super.key,
     required this.color,
     required this.text,
   }) : fontSize = 16;
 
-  const TextHeader.subtile2({
+  const TextHeaderAtom.subtile2({
     super.key,
     required this.color,
     required this.text,
   }) : fontSize = 14;
 
-  const TextHeader.subtile3({
+  const TextHeaderAtom.subtile3({
     super.key,
     required this.color,
     required this.text,

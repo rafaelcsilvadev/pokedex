@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/core/theme/typography/app_typography.dart';
 
-class TextBody extends StatelessWidget {
-  const TextBody({
+class TextBodyAtom extends StatelessWidget {
+  const TextBodyAtom({
     super.key,
     required this.text,
     required this.color,
     required this.fontSize,
   });
 
-  const TextBody.body1({
+  const TextBodyAtom.body1({
     super.key,
     required this.color,
     required this.text,
   }) : fontSize = 16;
 
-  const TextBody.body2({
+  const TextBodyAtom.body2({
     super.key,
     required this.color,
     required this.text,
   }) : fontSize = 14;
 
-  const TextBody.body3({
+  const TextBodyAtom.body3({
     super.key,
     required this.color,
     required this.text,
   }) : fontSize = 12;
 
-  const TextBody.body4({
+  const TextBodyAtom.body4({
     super.key,
     required this.color,
     required this.text,
   }) : fontSize = 10;
 
-  const TextBody.caption({
+  const TextBodyAtom.caption({
     super.key,
     required this.color,
     required this.text,
